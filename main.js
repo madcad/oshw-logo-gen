@@ -66,7 +66,7 @@ $('body').on('change', 'input[type="radio"]', function (e) {
   }
 });
 
-$('button').on('click', function () {
+$('button#save').on('click', function () {
   var a = document.createElement('a');
   a.setAttribute('target', '_blank');
   a.setAttribute('download', 'oshw.svg');
@@ -74,6 +74,10 @@ $('button').on('click', function () {
   $('body').append(a);
   a.click();
   $(a).remove();
+});
+
+$('button#savepng').on('click', function () {
+    saveSvgAsPng(svg[0], "oshw.png");
 });
 
 function change(what, value) {
